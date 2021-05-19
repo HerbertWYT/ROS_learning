@@ -156,7 +156,7 @@ include_directories(
 # )
 
 add_executable(landing_node src/control.cpp)
-target_link_libraries(landing_ndoe ${catkin_LIBRARIES})
+target_link_libraries(landing_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##
