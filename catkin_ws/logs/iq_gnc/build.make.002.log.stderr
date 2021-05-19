@@ -1,0 +1,7 @@
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kgnc_function.hpp: No such file or directory
+ #include [01;31m[K<gnc_function.hpp>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/square_new.dir/src/square_new.cpp.o] Error 1
+make[1]: *** [CMakeFiles/square_new.dir/all] Error 2
+make: *** [all] Error 2

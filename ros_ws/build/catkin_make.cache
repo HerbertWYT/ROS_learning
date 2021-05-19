@@ -1,0 +1,2 @@
+darknet_ros/darknet_ros:darknet_ros/darknet_ros_msgs
+-DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCATKIN_DEVEL_PREFIX=/home/ytubun/Documents/ROS/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ytubun/Documents/ROS/ros_ws/install -G Unix Makefiles

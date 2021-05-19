@@ -1,0 +1,4 @@
+[ 25%] [32m[1mLinking CXX executable /home/ytubun/Documents/ROS/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/gnc_example[0m
+[ 50%] [32m[1mLinking CXX executable /home/ytubun/Documents/ROS/catkin_ws/devel/.private/iq_gnc/lib/iq_gnc/square[0m
+[ 75%] Built target gnc_example
+[100%] Built target square

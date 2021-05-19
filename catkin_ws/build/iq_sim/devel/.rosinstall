@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ytubun/Documents/ROS/catkin_ws/build/iq_sim/devel/setup.sh

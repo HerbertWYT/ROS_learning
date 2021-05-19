@@ -1,0 +1,42 @@
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:6:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kinit[m[K’ was not declared in this scope
+  ros:[01;31m[Kinit[m[K(agrc, argv, "gnc_node");
+      [01;31m[K^~~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:6:6:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/opt/ros/melodic/include/ros/node_handle.h:47:0[m[K,
+                 from [01m[K/opt/ros/melodic/include/ros/ros.h:45[m[K,
+                 from [01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/include/gnc_functions.hpp:9[m[K,
+                 from [01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/init.h:103:18:[m[K [01;36m[Knote: [m[K  ‘[01m[Kros::init[m[K’
+ ROSCPP_DECL void [01;36m[Kinit[m[K(const VP_string& remapping_args, const std::string& name, uint32_t options = 0);
+                  [01;36m[K^~~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:7:2:[m[K [01;31m[Kerror: [m[Kduplicate label ‘[01m[Kros[m[K’
+  [01;31m[Kros[m[K:NodeHandle gnc_node;
+  [01;31m[K^~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:7:6:[m[K [01;31m[Kerror: [m[K‘[01m[KNodeHandle[m[K’ was not declared in this scope
+  ros:[01;31m[KNodeHandle[m[K gnc_node;
+      [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:7:6:[m[K [01;36m[Knote: [m[Ksuggested alternative:
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/include/gnc_functions.hpp:9[m[K,
+                 from [01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:1[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:87:21:[m[K [01;36m[Knote: [m[K  ‘[01m[Kros::NodeHandle[m[K’
+   class ROSCPP_DECL [01;36m[KNodeHandle[m[K
+                     [01;36m[K^~~~~~~~~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:11:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kgnc_node[m[K’ was not declared in this scope
+  init_publisher_subscribers([01;31m[Kgnc_node[m[K);
+                             [01;31m[K^~~~~~~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:11:29:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kset_mode[m[K’
+  init_publisher_subscribers([01;36m[Kgnc_node[m[K);
+                             [01;36m[K^~~~~~~~[m[K
+                             [32m[Kset_mode[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:11:2:[m[K [01;31m[Kerror: [m[K‘[01m[Kinit_publisher_subscribers[m[K’ was not declared in this scope
+  [01;31m[Kinit_publisher_subscribers[m[K(gnc_node);
+  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/square_new.cpp:11:2:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Kinit_publisher_subscriber[m[K’
+  [01;36m[Kinit_publisher_subscribers[m[K(gnc_node);
+  [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+  [32m[Kinit_publisher_subscriber[m[K
+make[2]: *** [CMakeFiles/square_new.dir/src/square_new.cpp.o] Error 1
+make[1]: *** [CMakeFiles/square_new.dir/all] Error 2
+make: *** [all] Error 2

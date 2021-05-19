@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ytubun/Documents/ROS/catkin_ws/build/offboard/devel/setup.sh

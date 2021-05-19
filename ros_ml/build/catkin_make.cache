@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/ytubun/Documents/ROS/ros_ml/devel -DCMAKE_INSTALL_PREFIX=/home/ytubun/Documents/ROS/ros_ml/install -G Unix Makefiles

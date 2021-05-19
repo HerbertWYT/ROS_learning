@@ -1,0 +1,5 @@
+Symlinking /home/ytubun/Documents/ROS/catkin_ws/devel/share/iq_gnc/cmake/iq_gncConfig-version.cmake
+Symlinking /home/ytubun/Documents/ROS/catkin_ws/devel/share/iq_gnc/cmake/iq_gncConfig.cmake
+Symlinking /home/ytubun/Documents/ROS/catkin_ws/devel/lib/iq_gnc/square
+Symlinking /home/ytubun/Documents/ROS/catkin_ws/devel/lib/iq_gnc/gnc_example
+Symlinking /home/ytubun/Documents/ROS/catkin_ws/devel/lib/pkgconfig/iq_gnc.pc

@@ -1,0 +1,13 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/sub_sol.dir/src/subscriber_sol.cpp.o[0m
+[ 50%] Built target square
+[ 83%] Built target gnc_example
+[01m[K/home/ytubun/Documents/ROS/catkin_ws/src/iq_gnc/src/subscriber_sol.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Kdarknet_ros_msgs/BoundingBoxes.h: No such file or directory
+ #include [01;31m[K<darknet_ros_msgs/BoundingBoxes.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+CMakeFiles/sub_sol.dir/build.make:62: recipe for target 'CMakeFiles/sub_sol.dir/src/subscriber_sol.cpp.o' failed
+make[2]: *** [CMakeFiles/sub_sol.dir/src/subscriber_sol.cpp.o] Error 1
+CMakeFiles/Makefile2:67: recipe for target 'CMakeFiles/sub_sol.dir/all' failed
+make[1]: *** [CMakeFiles/sub_sol.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2
