@@ -1,9 +1,0 @@
-/home/ytubun/Documents/ROS/ros_ml/install/_setup_util.py
-/home/ytubun/Documents/ROS/ros_ml/install/env.sh
-/home/ytubun/Documents/ROS/ros_ml/install/setup.bash
-/home/ytubun/Documents/ROS/ros_ml/install/local_setup.bash
-/home/ytubun/Documents/ROS/ros_ml/install/setup.sh
-/home/ytubun/Documents/ROS/ros_ml/install/local_setup.sh
-/home/ytubun/Documents/ROS/ros_ml/install/setup.zsh
-/home/ytubun/Documents/ROS/ros_ml/install/local_setup.zsh
-/home/ytubun/Documents/ROS/ros_ml/install/.rosinstall

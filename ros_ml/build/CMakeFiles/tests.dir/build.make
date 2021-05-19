@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ytubun/Documents/ROS/ros_ml/src
+CMAKE_SOURCE_DIR = /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ytubun/Documents/ROS/ros_ml/build
+CMAKE_BINARY_DIR = /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/ytubun/Documents/ROS/ros_ml/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ytubun/Documents/ROS/ros_ml/src /home/ytubun/Documents/ROS/ros_ml/src /home/ytubun/Documents/ROS/ros_ml/build /home/ytubun/Documents/ROS/ros_ml/build /home/ytubun/Documents/ROS/ros_ml/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

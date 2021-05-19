@@ -8,13 +8,13 @@
 
 mavros_msgs::State current_state;
 
-void stat_cb(const mavros_msgs::State::ConstPtr& msg){
+void state_cb(const mavros_msgs::State::ConstPtr& msg){
 	current_state = *msg;
 }
 
-geometry_msgs::PoseStamped lcoal_positon;
+geometry_msgs::PoseStamped local_position;
 void position_cb(const geometry_msgs::PoseStamped::ConstPtr& msg){
-	lcoal_positon = *msg;
+	local_position = *msg;
 }
 
 landing::center landmark;
@@ -22,18 +22,18 @@ void center_cb(const landing::center::ConstPtr& msg){
 	landmark = *msg;
 }
 
-int main(init argc,char **argv)
+int main(int argc,char **argv)
 {
 	ros::init(argc, argv, "landing_node");
 	ros::NodeHandle nh;
 
-	ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("mavros/state", 10, state_cb);
-	ros::Subscriber position_sub = nh.subscribe<geometry_msgs::PoseStamped>("mavros/lcoal_positon/poes", 10, position_cb);
-	ros::Subscriber center_sub = nh.subscribe<landing::center>("cneter", 10, center_cb);
-	ros::Publisher lcoal_pos_sub = nh.subscribe<geometry_msgs::PoseStamped>("mavros/setpoint_position/local", 10);
-	ros::Publisher local_vel_sub = nh.subscribe<geometry_msgs::TwistStamped>("mavros/setpoint_velocity/local", 10);
-	ros::ServiceClient arming_client = nh.subscribe<mavros_msgs::CommandBool>("mavros/cmd/arming");
-	ros::ServiceClient set_mode_client = nh.subscribe<mavros_msgs::SetMode>("mavros/set_mdoe");
+	ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("mavros/state",10,state_cb);
+	ros::Subscriber position_sub = nh.subscribe<geometry_msgs::PoseStamped>("mavros/local_positon/pose",10,position_cb);
+	ros::Subscriber center_sub = nh.subscribe<landing::center>("center",10,center_cb);
+	ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>("mavros/setpoint_position/local",10);
+	ros::Publisher local_vel_pub = nh.advertise<geometry_msgs::TwistStamped>("mavros/setpoint_velocity/local",10);
+	ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
+	ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
 
 	ros::Rate rate(20.0);
 
@@ -42,7 +42,7 @@ int main(init argc,char **argv)
 		rate.sleep();
 	}
 
-	geometry_msgs:PoseStamped pose;
+	geometry_msgs::PoseStamped pose;
 	pose.pose.position.x = 0;
 	pose.pose.position.y = 0;
 	pose.pose.position.z = 2;
@@ -50,12 +50,12 @@ int main(init argc,char **argv)
 	geometry_msgs::TwistStamped vel;
 
 	for(int i = 100; ros::ok() && i > 0; -i){
-		lcoal_pos_sub.publish(pose);
+		local_pos_pub.publish(pose);
 		ros::spinOnce();
 		rate.sleep();
 	}
 
-	mavros_msgs::SetMode offb_set_mode; ###Change mode here is for px4###
+	mavros_msgs::SetMode offb_set_mode; //Change mode here is for px4
 	offb_set_mode.request.custom_mode = "OFFBOARD";
 
 	mavros_msgs::CommandBool arm_cmd;
@@ -73,7 +73,7 @@ int main(init argc,char **argv)
 			}
 			last_request = ros::Time::now();
 		}
-		else if( !current_state && (ros::Time::now() - last_request > ros::Duration(5.0)))
+		else if( !current_state.armed && (ros::Time::now() - last_request > ros::Duration(5.0)))
 		{
 			if( arming_client.call(arm_cmd) && arm_cmd.response.success)
 			{
@@ -84,7 +84,7 @@ int main(init argc,char **argv)
 		else if(ros::Time::now() - last_request > ros::Duration(5.0))
 			break;
 
-		loacl_pos_pub.publish(pose);
+		local_pos_pub.publish(pose);
 
 		ros::spinOnce();
 		rate.sleep();
@@ -99,14 +99,14 @@ int main(init argc,char **argv)
 		vel.twist.linear.x = 1;
 		vel.twist.linear.y = 0;
 		vel.twist.linear.z = 0;
-		loacl_vel_pub.publish(vel);
+		local_vel_pub.publish(vel);
 		ros::spinOnce();
 		rate.sleep();
 	}
 	last_request = ros::Time::now();
 	while(ros::ok())
 	{
-		if(ros::Time::now( -last_request > ros::Duration(5.0)))
+		if(ros::Time::now() -last_request > ros::Duration(5.0))
 			break;
 		vel.twist.linear.x = 0;
 		vel.twist.linear.y = 1;
@@ -123,14 +123,14 @@ int main(init argc,char **argv)
 		vel.twist.linear.x = -1;
 		vel.twist.linear.y = 0;
 		vel.twist.linear.z = 0;
-		loacl_vel_pub.publish(vel);
+		local_vel_pub.publish(vel);
 		ros::spinOnce();
 		rate.sleep();
 	}
 	last_request = ros::Time::now();
 	while(ros::ok())
 	{
-		if(ros::Time::now( -last_request > ros::Duration(5.0)))
+		if(ros::Time::now() -last_request > ros::Duration(5.0))
 			break;
 		vel.twist.linear.x = 0;
 		vel.twist.linear.y = -1;
@@ -142,15 +142,15 @@ int main(init argc,char **argv)
 
 	while(ros::ok())
 	{
-		if(loacl_position.pose.position.z < 0.3)
+		if(local_position.pose.position.z < 0.3)
 			break;
 
 		if(landmark.iffind)
 		{
 
-			double err_x = landmark.heighy/2.0 - landmark.x;
+			double err_x = landmark.height/2.0 - landmark.x;
 			double err_y = landmark.width/2.0 - landmark.y;
-			ROS_INFO_STEAM("state="<<err_x<<" "<<err_y);
+			ROS_INFO_STREAM("state="<<err_x<<" "<<err_y);
 
 			vel.twist.linear.x = err_x/400;
 			vel.twist.linear.y = err_y/400;
@@ -166,10 +166,10 @@ int main(init argc,char **argv)
 
 		else
 		{
-			pose.pose.position.x = lcoal_position.pose.position.x;
-			pose.pose.position.y = lcoal_position.pose.position.y;
+			pose.pose.position.x = local_position.pose.position.x;
+			pose.pose.position.y = local_position.pose.position.y;
 			pose.pose.position.z = 2;
-			lcoal_pos_sub.publish(pose);
+			local_pos_pub.publish(pose);
 			ros::spinOnce();
 			rate.sleep();
 		}

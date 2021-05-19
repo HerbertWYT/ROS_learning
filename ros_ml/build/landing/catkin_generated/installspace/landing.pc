@@ -1,0 +1,8 @@
+prefix=/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/install
+
+Name: landing
+Description: Description of landing
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs mavros roscpp rospy std_msgs message_generation
