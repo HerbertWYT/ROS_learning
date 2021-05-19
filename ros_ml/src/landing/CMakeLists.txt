@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -54,10 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
 #   Message1.msg
 #   Message2.msg
 # )
-add_message_files(
-   FILES
-   center.msg
-)
+add_message_files(FILES center.msg)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -78,10 +76,7 @@ add_message_files(
 #   DEPENDENCIES
 #   geometry_msgs#   std_msgs
 # )
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
+generate_messages(DEPENDENCIES std_msgs)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -115,7 +110,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES landing
-#  CATKIN_DEPENDS geometry_msgs mavros roscpp rospy std_msgs
+   CATKIN_DEPENDS geometry_msgs mavros roscpp rospy std_msgs message_generation
 #  DEPENDS system_lib
 )
 
@@ -144,7 +139,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/landing_node.cpp)
-add_executable(${PROJECT_NAME}_node src/control.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -160,9 +154,9 @@ add_executable(${PROJECT_NAME}_node src/control.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(${PROJECT_NAME}_node
-  ${catkin_LIBRARIES}
-)
+
+add_executable(landing_node src/control.cpp)
+target_link_libraries(landing_ndoe ${catkin_LIBRARIES})
 
 #############
 ## Install ##
