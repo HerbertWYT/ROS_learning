@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ytubun/Documents/ROS/ros_ml/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

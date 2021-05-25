@@ -67,14 +67,14 @@ set(landing_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(landing_SOURCE_PREFIX /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src/landing)
-  set(landing_DEVEL_PREFIX /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel)
+  set(landing_SOURCE_PREFIX /home/ytubun/Documents/ROS/ros_ml/src/landing)
+  set(landing_DEVEL_PREFIX /home/ytubun/Documents/ROS/ros_ml/devel)
   set(landing_INSTALL_PREFIX "")
   set(landing_PREFIX ${landing_DEVEL_PREFIX})
 else()
   set(landing_SOURCE_PREFIX "")
   set(landing_DEVEL_PREFIX "")
-  set(landing_INSTALL_PREFIX /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/install)
+  set(landing_INSTALL_PREFIX /home/ytubun/Documents/ROS/ros_ml/install)
   set(landing_PREFIX ${landing_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(landing_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/include " STREQUAL " ")
+if(NOT "/home/ytubun/Documents/ROS/ros_ml/devel/include " STREQUAL " ")
   set(landing_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/include")
+  set(_include_dirs "/home/ytubun/Documents/ROS/ros_ml/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/include " STREQUA
         message(FATAL_ERROR "Project 'landing' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'landing' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src/landing/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'landing' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ytubun/Documents/ROS/ros_ml/src/landing/${idir}'.  ${_report}")
     endif()
     _list_append_unique(landing_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/lib;/home/ubuntuuaspx4/Documents/test_catkin_ws/devel/lib;/home/ubuntuuaspx4/Documents/ros_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ytubun/Documents/ROS/ros_ml/devel/lib;/home/ytubun/Documents/ROS/ardupilot_ws/devel/lib;/home/ytubun/Documents/ROS/learn_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

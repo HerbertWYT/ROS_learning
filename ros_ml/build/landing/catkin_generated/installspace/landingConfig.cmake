@@ -67,14 +67,14 @@ set(landing_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(landing_SOURCE_PREFIX /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src/landing)
-  set(landing_DEVEL_PREFIX /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel)
+  set(landing_SOURCE_PREFIX /home/ytubun/Documents/ROS/ros_ml/src/landing)
+  set(landing_DEVEL_PREFIX /home/ytubun/Documents/ROS/ros_ml/devel)
   set(landing_INSTALL_PREFIX "")
   set(landing_PREFIX ${landing_DEVEL_PREFIX})
 else()
   set(landing_SOURCE_PREFIX "")
   set(landing_DEVEL_PREFIX "")
-  set(landing_INSTALL_PREFIX /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/install)
+  set(landing_INSTALL_PREFIX /home/ytubun/Documents/ROS/ros_ml/install)
   set(landing_PREFIX ${landing_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/install/lib;/home/ubuntuuaspx4/Documents/test_catkin_ws/devel/lib;/home/ubuntuuaspx4/Documents/ros_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ytubun/Documents/ROS/ros_ml/install/lib;/home/ytubun/Documents/ROS/ardupilot_ws/devel/lib;/home/ytubun/Documents/ROS/learn_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

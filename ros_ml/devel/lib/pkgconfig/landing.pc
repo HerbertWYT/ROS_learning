@@ -1,8 +1,8 @@
-prefix=/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel
+prefix=/home/ytubun/Documents/ROS/ros_ml/devel
 
 Name: landing
 Description: Description of landing
 Version: 0.0.1
-Cflags: -I/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/include
+Cflags: -I/home/ytubun/Documents/ROS/ros_ml/devel/include
 Libs: -L${prefix}/lib 
 Requires: geometry_msgs mavros roscpp rospy std_msgs message_generation

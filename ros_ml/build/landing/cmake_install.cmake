@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src/landing
+# Install script for directory: /home/ytubun/Documents/ROS/ros_ml/src/landing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ytubun/Documents/ROS/ros_ml/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/msg" TYPE FILE FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src/landing/msg/center.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/msg" TYPE FILE FILES "/home/ytubun/Documents/ROS/ros_ml/src/landing/msg/center.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/cmake" TYPE FILE FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build/landing/catkin_generated/installspace/landing-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/cmake" TYPE FILE FILES "/home/ytubun/Documents/ROS/ros_ml/build/landing/catkin_generated/installspace/landing-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/include/landing")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/ytubun/Documents/ROS/ros_ml/devel/include/landing")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/share/roseus/ros/landing")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/ytubun/Documents/ROS/ros_ml/devel/share/roseus/ros/landing")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/share/common-lisp/ros/landing")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/ytubun/Documents/ROS/ros_ml/devel/share/common-lisp/ros/landing")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/share/gennodejs/ros/landing")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/ytubun/Documents/ROS/ros_ml/devel/share/gennodejs/ros/landing")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/lib/python2.7/dist-packages/landing")
+  execute_process(COMMAND "/home/ytubun/Documents/anaconda3/bin/python3" -m compileall "/home/ytubun/Documents/ROS/ros_ml/devel/lib/python3/dist-packages/landing")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/lib/python2.7/dist-packages/landing")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/ytubun/Documents/ROS/ros_ml/devel/lib/python3/dist-packages/landing")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build/landing/catkin_generated/installspace/landing.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ytubun/Documents/ROS/ros_ml/build/landing/catkin_generated/installspace/landing.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/cmake" TYPE FILE FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build/landing/catkin_generated/installspace/landing-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/cmake" TYPE FILE FILES "/home/ytubun/Documents/ROS/ros_ml/build/landing/catkin_generated/installspace/landing-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing/cmake" TYPE FILE FILES
-    "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build/landing/catkin_generated/installspace/landingConfig.cmake"
-    "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/build/landing/catkin_generated/installspace/landingConfig-version.cmake"
+    "/home/ytubun/Documents/ROS/ros_ml/build/landing/catkin_generated/installspace/landingConfig.cmake"
+    "/home/ytubun/Documents/ROS/ros_ml/build/landing/catkin_generated/installspace/landingConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing" TYPE FILE FILES "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/src/landing/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/landing" TYPE FILE FILES "/home/ytubun/Documents/ROS/ros_ml/src/landing/package.xml")
 endif()
 

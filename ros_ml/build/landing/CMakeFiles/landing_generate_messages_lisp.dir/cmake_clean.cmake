@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/landing_generate_messages_lisp"
-  "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/share/common-lisp/ros/landing/msg/center.lisp"
+  "/home/ytubun/Documents/ROS/ros_ml/devel/share/common-lisp/ros/landing/msg/center.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

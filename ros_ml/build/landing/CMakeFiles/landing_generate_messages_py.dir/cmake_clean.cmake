@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/landing_generate_messages_py"
-  "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/lib/python2.7/dist-packages/landing/msg/_center.py"
-  "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/lib/python2.7/dist-packages/landing/msg/__init__.py"
+  "/home/ytubun/Documents/ROS/ros_ml/devel/lib/python3/dist-packages/landing/msg/_center.py"
+  "/home/ytubun/Documents/ROS/ros_ml/devel/lib/python3/dist-packages/landing/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

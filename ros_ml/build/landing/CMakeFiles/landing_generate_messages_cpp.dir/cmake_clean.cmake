@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/landing_generate_messages_cpp"
-  "/home/ubuntuuaspx4/Documents/ROS_learning/ros_ml/devel/include/landing/center.h"
+  "/home/ytubun/Documents/ROS/ros_ml/devel/include/landing/center.h"
 )
 
 # Per-language clean rules from dependency scanning.
