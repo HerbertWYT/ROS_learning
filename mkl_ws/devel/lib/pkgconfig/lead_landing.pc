@@ -1,0 +1,8 @@
+prefix=/home/ytubun/Documents/ROS/mkl_ws/devel
+
+Name: lead_landing
+Description: Description of lead_landing
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs mavros roscpp rospy std_msgs

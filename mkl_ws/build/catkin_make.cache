@@ -1,0 +1,2 @@
+lead_landing
+-DCATKIN_DEVEL_PREFIX=/home/ytubun/Documents/ROS/mkl_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ytubun/Documents/ROS/mkl_ws/install -G Unix Makefiles
