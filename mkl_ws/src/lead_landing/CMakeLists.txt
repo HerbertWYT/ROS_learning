@@ -157,6 +157,10 @@ include_directories(
 
 add_executable(state_statement src/state_statement.cpp)
 target_link_libraries(state_statement ${catkin_LIBRARIES})
+
+add_executable(vehicle_control src/vehicle_control.cpp)
+target_link_libraries(vehicle_control ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
