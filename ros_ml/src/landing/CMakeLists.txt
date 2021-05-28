@@ -158,6 +158,9 @@ include_directories(
 add_executable(landing_node src/control.cpp)
 target_link_libraries(landing_node ${catkin_LIBRARIES})
 
+add_executable(offb_node src/offb_node.cpp)
+target_link_libraries(offb_node ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
