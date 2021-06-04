@@ -273,6 +273,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "gtest/googlemock/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "lead_landing/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "lead_landing/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
+  "lead_landing/CMakeFiles/vehicle_publisher.dir/DependInfo.cmake"
   "lead_landing/CMakeFiles/uuid_msgs_generate_messages_py.dir/DependInfo.cmake"
   "lead_landing/CMakeFiles/uuid_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "lead_landing/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/DependInfo.cmake"

@@ -311,6 +311,19 @@ geometry_msgs_generate_messages_nodejs/fast:
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named vehicle_publisher
+
+# Build rule for target.
+vehicle_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vehicle_publisher
+.PHONY : vehicle_publisher
+
+# fast build rule for target.
+vehicle_publisher/fast:
+	$(MAKE) -f lead_landing/CMakeFiles/vehicle_publisher.dir/build.make lead_landing/CMakeFiles/vehicle_publisher.dir/build
+.PHONY : vehicle_publisher/fast
+
+#=============================================================================
 # Target rules for targets named uuid_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1244,6 +1257,7 @@ help:
 	@echo "... gtest"
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... vehicle_publisher"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... diagnostic_msgs_generate_messages_py"

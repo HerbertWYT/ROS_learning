@@ -161,6 +161,11 @@ target_link_libraries(state_statement ${catkin_LIBRARIES})
 add_executable(vehicle_control src/vehicle_control.cpp)
 target_link_libraries(vehicle_control ${catkin_LIBRARIES})
 
+add_executable(vehicle_publisher src/vehicle_publisher.cpp)
+target_link_libraries(vehicle_publisher ${catkin_LIBRARIES})
+
+
+
 #############
 ## Install ##
 #############

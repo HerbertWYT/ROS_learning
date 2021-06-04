@@ -68,17 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -90,6 +79,17 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -196,6 +196,21 @@ geometry_msgs_generate_messages_nodejs: lead_landing/CMakeFiles/geometry_msgs_ge
 geometry_msgs_generate_messages_nodejs/fast:
 	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f lead_landing/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make lead_landing/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+lead_landing/CMakeFiles/vehicle_publisher.dir/rule:
+	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f CMakeFiles/Makefile2 lead_landing/CMakeFiles/vehicle_publisher.dir/rule
+.PHONY : lead_landing/CMakeFiles/vehicle_publisher.dir/rule
+
+# Convenience name for target.
+vehicle_publisher: lead_landing/CMakeFiles/vehicle_publisher.dir/rule
+
+.PHONY : vehicle_publisher
+
+# fast build rule for target.
+vehicle_publisher/fast:
+	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f lead_landing/CMakeFiles/vehicle_publisher.dir/build.make lead_landing/CMakeFiles/vehicle_publisher.dir/build
+.PHONY : vehicle_publisher/fast
 
 # Convenience name for target.
 lead_landing/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
@@ -1301,6 +1316,33 @@ src/vehicle_control.cpp.s:
 	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f lead_landing/CMakeFiles/vehicle_control.dir/build.make lead_landing/CMakeFiles/vehicle_control.dir/src/vehicle_control.cpp.s
 .PHONY : src/vehicle_control.cpp.s
 
+src/vehicle_publisher.o: src/vehicle_publisher.cpp.o
+
+.PHONY : src/vehicle_publisher.o
+
+# target to build an object file
+src/vehicle_publisher.cpp.o:
+	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f lead_landing/CMakeFiles/vehicle_publisher.dir/build.make lead_landing/CMakeFiles/vehicle_publisher.dir/src/vehicle_publisher.cpp.o
+.PHONY : src/vehicle_publisher.cpp.o
+
+src/vehicle_publisher.i: src/vehicle_publisher.cpp.i
+
+.PHONY : src/vehicle_publisher.i
+
+# target to preprocess a source file
+src/vehicle_publisher.cpp.i:
+	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f lead_landing/CMakeFiles/vehicle_publisher.dir/build.make lead_landing/CMakeFiles/vehicle_publisher.dir/src/vehicle_publisher.cpp.i
+.PHONY : src/vehicle_publisher.cpp.i
+
+src/vehicle_publisher.s: src/vehicle_publisher.cpp.s
+
+.PHONY : src/vehicle_publisher.s
+
+# target to generate assembly for a file
+src/vehicle_publisher.cpp.s:
+	cd /home/ytubun/Documents/ROS/mkl_ws/build && $(MAKE) -f lead_landing/CMakeFiles/vehicle_publisher.dir/build.make lead_landing/CMakeFiles/vehicle_publisher.dir/src/vehicle_publisher.cpp.s
+.PHONY : src/vehicle_publisher.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1308,8 +1350,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... uuid_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... vehicle_publisher"
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... uuid_msgs_generate_messages_eus"
 	@echo "... diagnostic_msgs_generate_messages_py"
@@ -1355,7 +1399,6 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... install/local"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
@@ -1392,6 +1435,9 @@ help:
 	@echo "... src/vehicle_control.o"
 	@echo "... src/vehicle_control.i"
 	@echo "... src/vehicle_control.s"
+	@echo "... src/vehicle_publisher.o"
+	@echo "... src/vehicle_publisher.i"
+	@echo "... src/vehicle_publisher.s"
 .PHONY : help
 
 
