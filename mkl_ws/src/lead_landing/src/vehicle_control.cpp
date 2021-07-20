@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 	}
 
     //Determin the vehicle state
-	if(ros::ok())
+	while(ros::ok())
 	{
 	    mavros_msgs::SetMode guided_set_mode;
 	    guided_set_mode.request.custom_mode = "GUIDED";
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
   	     	ROS_INFO(" Vehicle is ready");
   			//break;
   		}
-  		if(vehicle_current_state.mode != "GUIDED")
+  		else if(vehicle_current_state.mode != "GUIDED")
   		{
   			set_mode_client.call(guided_set_mode);
 			ROS_INFO("The current mode is set to GUIDED");
@@ -61,13 +61,21 @@ int main(int argc, char **argv)
   		{
   			arming_client.call(arm_cmd);
    			ROS_INFO("The vehicle is Armed");
+   			//break;
 	  	} 
+	  	mavros_msgs::CommandTOL takeoff_cmd;
+		takeoff_cmd.request.altitude = 2.0;
+		takeoff_client.call(takeoff_cmd);
+		if (takeoff_client.call(takeoff_cmd) && takeoff_cmd.response.success)
+        {
+	     	ROS_INFO("It already takeoff.");
+	    }
 	    ros::spinOnce();
         rate.sleep();
 	}
 
- //    mavros_msgs::CommandTOL takeoff_cmd;
-	// takeoff_cmd.request.altitude = 2.0;
+    //mavros_msgs::CommandTOL takeoff_cmd;
+	//takeoff_cmd.request.altitude = 2.0;
 	// while(ros::ok())
 	// {
 	// 	int takeoff_state;
@@ -86,20 +94,25 @@ int main(int argc, char **argv)
 	
 
 
-	geometry_msgs::PoseStamped pose;
-	pose.pose.position.x = 0;
-	pose.pose.position.y = 0;
-	pose.pose.position.z = 10;
+		//geometry_msgs::PoseStamped pose;
+		//pose.pose.position.x = 0;
+		//pose.pose.position.y = 0;
+		//pose.pose.position.z = 10;
 
-	geometry_msgs::TwistStamped vel;
+		//geometry_msgs::TwistStamped vel;
 
-	for(int i = 100; ros::ok() && i > 0; -i){
-		local_pos_pub.publish(pose);
-		ros::spinOnce();
-		rate.sleep();
-	}
+	// for(int i = 100; ros::ok() && i > 0; -i){
+	// 	local_pos_pub.publish(pose);
+	// 	ros::spinOnce();
+	// 	rate.sleep();
+	// }
 
 
+
+		//local_pos_pub.publish(pose);
+		//ros::spinOnce();
+		//rate.sleep();
+	//}
 
 	//
 	//geometry_msgs::TwistStamped vel;

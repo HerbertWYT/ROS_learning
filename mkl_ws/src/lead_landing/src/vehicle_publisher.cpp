@@ -24,7 +24,8 @@ int main(int argc, char **argv)
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
             ("mavros/cmd/arming");
     ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>
-            ("mavros/set_mode");
+            ("mavros/set_mode");    
+    ros::ServiceClient takeoff_client = nh.serviceClient<mavros_msgs::CommandTOL>("mavros/cmd/takeoff");
 
     //the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
@@ -53,11 +54,15 @@ int main(int argc, char **argv)
     mavros_msgs::CommandBool arm_cmd;
     arm_cmd.request.value = true;
 
+    mavros_msgs::CommandTOL takeoff_cmd;
+    takeoff_cmd.request.altitude = 2.0;
+
+
     ros::Time last_request = ros::Time::now();
 
     while(ros::ok()){
         if( current_state.mode != "GUIDED" &&
-            (ros::Time::now() - last_request > ros::Duration(2.0))){
+            (ros::Time::now() - last_request > ros::Duration(1.0))){
             if( set_mode_client.call(guid_set_mode) &&
                 guid_set_mode.response.mode_sent){
                 ROS_INFO("GUIDED enabled");
@@ -65,7 +70,7 @@ int main(int argc, char **argv)
             last_request = ros::Time::now();
         } else {
             if( !current_state.armed &&
-                (ros::Time::now() - last_request > ros::Duration(2.0))){
+                (ros::Time::now() - last_request > ros::Duration(1.0))){
                 if( arming_client.call(arm_cmd) &&
                     arm_cmd.response.success){
                     ROS_INFO("Vehicle armed");
@@ -73,7 +78,7 @@ int main(int argc, char **argv)
                 last_request = ros::Time::now();
             }
         }
-
+        takeoff_client.call(takeoff_cmd);
         local_pos_pub.publish(pose);
 
         ros::spinOnce();
